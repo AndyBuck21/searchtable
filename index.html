@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Search Table</title>
+        <script>
+            let d = newDate();
+            alert("Today's date is " + d );
+        </script>
+
+<script>
+    function myFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            txtvalue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1)
+            {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+</script>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width-device-width, intial-scale=1.0">
+            <!-- Css File -->
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+        <i class="ini ini-search"></i>
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for company......">
+        
+            <table id="myTable">
+                <tr class="header">
+                    <th style="width:60%;">Company</th>
+                    <th style="width:40%;">Country</th>
+                </tr>
+    
+                <tr>
+                    <td>Instagram</td>
+                    <td>Nigeria</td>
+                </tr>
+    
+                <tr>
+                    <td>WhoScore?</td>
+                    <td>United Kingdom</td>
+                </tr>
+                <tr>
+                    <td>Viral Inc.</td>
+                    <td>Germany</td>
+                </tr>
+                
+                <tr>
+                    <td>Softfolio</td>
+                    <td>Canada</td>
+                </tr>
+            </table>
+
+<script src="script.js"></script>
+
+            
+                
+    </body>
+    
+
+</html>
+
